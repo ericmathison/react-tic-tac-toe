@@ -1,0 +1,15 @@
+.Board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.Board-square {
+  flex-basis: 25%;
+  height: 225px;
+  border: 1px solid #aaa;
+  background: #ddd;
+  margin: 2px;
+}
