@@ -1,0 +1,8 @@
+.Square {
+  flex-basis: 25%;
+  height: 225px;
+  border: 1px solid #aaa;
+  background: #ddd;
+  margin: 2px;
+  font-size: 200px;
+}

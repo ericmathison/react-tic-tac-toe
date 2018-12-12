@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import './Board.css';
+import Square from './Square.js';
 
 class Board extends Component {
   render() {
     return (
       <div className="Board">
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
-          <div className="Board-square"></div>
+          <Square />
+          <Square />
+          <Square />
+          <Square />
+          <Square />
+          <Square />
+          <Square />
+          <Square />
+          <Square />
       </div>
     );
   }

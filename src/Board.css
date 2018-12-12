@@ -6,10 +6,3 @@
   margin: 0 auto;
 }
 
-.Board-square {
-  flex-basis: 25%;
-  height: 225px;
-  border: 1px solid #aaa;
-  background: #ddd;
-  margin: 2px;
-}
