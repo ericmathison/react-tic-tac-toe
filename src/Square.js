@@ -7,11 +7,9 @@ class Square extends Component {
     this.state = {
       player: ''
     };
-
-    this.clickSquare = this.clickSquare.bind(this);
   }
 
-  clickSquare(e) {
+  clickSquare = e => {
     e.preventDefault();
     this.setState({
       player: 'x'
