@@ -12,12 +12,11 @@ class Square extends Component {
   clickSquare = e => {
     e.preventDefault();
     this.setState({
-      player: 'x'
+      player: this.props.currentPlayer
     });
   }
 
   render() {
-
     return (
       <div className={`Square ${this.state.player}`} onClick={this.clickSquare}  >
       {this.state.player}
