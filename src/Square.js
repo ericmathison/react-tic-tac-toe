@@ -5,21 +5,25 @@ class Square extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      player: ''
+      playerIcon: '',
     };
+
+    this.clickSquare = this.clickSquare.bind(this);
   }
 
-  clickSquare = e => {
-    e.preventDefault();
-    this.setState({
-      player: this.props.currentPlayer
-    });
+  clickSquare() {
+    if (this.state.playerIcon === '') {
+      this.props.setPlayer(this.props.currentPlayer);
+      this.setState({
+        playerIcon: this.props.currentPlayer
+      });
+    }
   }
 
   render() {
     return (
-      <div className={`Square ${this.state.player}`} onClick={this.clickSquare}  >
-      {this.state.player}
+      <div className={`Square ${this.state.playerIcon}`} onClick={this.clickSquare}>
+        {this.state.playerIcon}
       </div>
     );
   }

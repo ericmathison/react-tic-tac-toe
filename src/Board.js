@@ -10,8 +10,8 @@ class Board extends Component {
     };
   }
 
-  setCurrentPlayer = () => {
-    if (this.state.currentPlayer === 'x') {
+  setPlayer = currentPlayer => {
+    if (currentPlayer === 'x') {
       this.setState({currentPlayer: 'o'});
     } else {
       this.setState({currentPlayer: 'x'});
@@ -20,16 +20,16 @@ class Board extends Component {
 
   render() {
     return (
-      <div className="Board" onClick={this.setCurrentPlayer}>
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} />
+      <div className="Board">
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
       </div>
     );
   }
