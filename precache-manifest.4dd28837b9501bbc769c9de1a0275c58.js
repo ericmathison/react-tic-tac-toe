@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react-tic-tac-toe/static/js/runtime~main.87d698cc.js"
   },
   {
-    "revision": "f7bdce15fd775c60dcd6e34dfd67421c",
+    "revision": "31a5c3955831576138965fbb6905d7f1",
     "url": "/react-tic-tac-toe/index.html"
   }
 ];
