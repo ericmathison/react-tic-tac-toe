@@ -21,15 +21,9 @@ class Board extends Component {
   render() {
     return (
       <div className="Board">
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
-          <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />
+          {[...Array(9)].map(n =>
+            <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />)
+          }
       </div>
     );
   }
