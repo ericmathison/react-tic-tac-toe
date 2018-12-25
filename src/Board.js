@@ -6,7 +6,8 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPlayer: 'x'
+      currentPlayer: 'x',
+      icons: [...Array(9)]
     };
   }
 
@@ -18,12 +19,24 @@ class Board extends Component {
     }
   };
 
+  setIcon = (n, icon) => {
+    let newIcons = this.state.icons;
+    newIcons[n] = icon;
+    this.setState({icons: newIcons});
+  }
+
   render() {
     return (
       <div className="Board">
-          {[...Array(9)].map(n =>
-            <Square currentPlayer={this.state.currentPlayer} setPlayer={this.setPlayer} />)
-          }
+          {[...Array(9).keys()].map(n =>
+            <Square key={n}
+                    squareIndex={n}
+                    currentPlayer={this.state.currentPlayer}
+                    currentIcon={this.state.icons[n]}
+                    setPlayer={this.setPlayer}
+                    setIcon={this.setIcon}
+            />
+          )}
       </div>
     );
   }
