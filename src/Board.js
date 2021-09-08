@@ -1,45 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Board.css';
 import Square from './Square.js';
 
-class Board extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentPlayer: 'x',
-      icons: [...Array(9)]
-    };
-  }
+function Board() {
+  const [currentPlayer, setCurrentPlayer] = useState('x');
+  const [icons, setIcons] = useState([...Array(9)]);
 
-  setPlayer = currentPlayer => {
+  const setPlayer = () => {
     if (currentPlayer === 'x') {
-      this.setState({currentPlayer: 'o'});
+      setCurrentPlayer('o');
     } else {
-      this.setState({currentPlayer: 'x'});
+      setCurrentPlayer('x');
     }
   };
 
-  setIcon = (n, icon) => {
-    let newIcons = this.state.icons;
+  const setIcon = (n, icon) => {
+    let newIcons = icons;
     newIcons[n] = icon;
-    this.setState({icons: newIcons});
+    setIcons(newIcons);
   }
 
-  render() {
-    return (
-      <div className="Board">
-          {[...Array(9).keys()].map(n =>
-            <Square key={n}
-                    squareIndex={n}
-                    currentPlayer={this.state.currentPlayer}
-                    currentIcon={this.state.icons[n]}
-                    setPlayer={this.setPlayer}
-                    setIcon={this.setIcon}
-            />
-          )}
-      </div>
-    );
-  }
+  return (
+    <div className="Board">
+        {[...Array(9).keys()].map(n =>
+          <Square key={n}
+                  squareIndex={n}
+                  currentPlayer={currentPlayer}
+                  currentIcon={icons[n]}
+                  setPlayer={setPlayer}
+                  setIcon={setIcon}
+          />
+        )}
+    </div>
+  );
 }
 
 export default Board;

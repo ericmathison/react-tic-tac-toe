@@ -1,30 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Square.css';
 
-class Square extends Component {
-  constructor(props) {
-    super(props);
-    this.clickSquare = this.clickSquare.bind(this);
-  }
+function Square(props) {
+  const [playerIcon, setPlayerIcon] = useState('');
 
-  clickSquare() {
-    if (!this.props.currentIcon) {
-      this.props.setPlayer(this.props.currentPlayer);
-      this.setState({
-        playerIcon: this.props.currentPlayer
-      });
-
-      this.props.setIcon(this.props.squareIndex, this.props.currentPlayer);
+  const clickSquare = () => {
+    if (!props.currentIcon) {
+      props.setPlayer(props.currentPlayer);
+      setPlayerIcon(props.currentPlayer);
+      props.setIcon(props.squareIndex, props.currentPlayer);
     }
   }
 
-  render() {
-    return (
-      <div className={`Square ${this.props.currentIcon}`} onClick={this.clickSquare}>
-        {this.props.currentIcon}
-      </div>
-    );
-  }
+  return (
+    <div className={`Square ${props.currentIcon}`} onClick={clickSquare}>
+      {props.currentIcon}
+    </div>
+  );
 }
 
 export default Square;
