@@ -7,11 +7,10 @@ function Board() {
   const [icons, setIcons] = useState([...Array(9)]);
 
   const setPlayer = () => {
-    if (currentPlayer === 'x') {
+    if (currentPlayer === 'x')
       setCurrentPlayer('o');
-    } else {
+    else
       setCurrentPlayer('x');
-    }
   };
 
   const setIcon = (n, icon) => {
