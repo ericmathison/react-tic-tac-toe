@@ -13,7 +13,9 @@ function Square(props) {
   }
 
   return (
-    <div className={`Square ${props.currentIcon}`} onClick={clickSquare}>
+    <div className={`Square ${props.currentIcon}`}
+         data-testid={`square-${props.squareIndex}`}
+         onClick={clickSquare}>
       {props.currentIcon}
     </div>
   );
